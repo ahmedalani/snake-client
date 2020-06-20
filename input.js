@@ -22,6 +22,7 @@ const handleUserInput = function (data) {
       break;
     case 'l':
       connection.write('Say: go long!');
+      break;
     default:
       console.log('press a, w, s, d to move or c to exit!');
       break;

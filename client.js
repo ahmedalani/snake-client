@@ -1,13 +1,14 @@
 /* eslint-disable func-names, no-console */
 const net = require('net');
+const { host, port, userName } = require('./constants');
 
 /**
  * Establishes connection with the game server
  */
 const connect = function () {
   const conn = net.createConnection({
-    host: 'localhost',
-    port: 50541
+    host,
+    port
   });
   // print data from server to console
   conn.on('data', (data) => {
@@ -15,7 +16,7 @@ const connect = function () {
   });
   conn.on('connect', () => {
     console.log('connection successfull!');
-    conn.write('Name: AHA');
+    conn.write(userName);
   });
   conn.on('end', () => {
     console.log('connection end!');
