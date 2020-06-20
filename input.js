@@ -1,4 +1,4 @@
-/* eslint-disable func-names, no-fallthrough */
+/* eslint-disable func-names, no-fallthrough, no-console */
 let connection;
 /**
  * Setup User Interface
@@ -20,6 +20,8 @@ const handleUserInput = function (data) {
     case 'd':
       connection.write('Move: right');
       break;
+    case 'l':
+      connection.write('Say: go long!');
     default:
       console.log('press a, w, s, d to move or c to exit!');
       break;
